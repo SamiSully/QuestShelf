@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestShelf</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+   <img src="finalQuestShelfDesign.png" alt="QuestShelf Logo" class="logo">
+   <p>Your games. Your quests.  Your Shelf.</p>
+    
+<section id="add-game">
+
+    <h2>Add a Game to Your Shelf</h2>
+
+    <form id="game-form">
+        <label for="game-title">Game Title:</label>
+        
+        <input type="text" id="game-title" name="title">
+
+        <label for="game-genre">Genre:</label>
+        <select id="game-genre" name="genre">
+        
+            <option value="">Select a genre</option>
+            <option value="RPG">RPG</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="game-platform">Platform:</label>
+        
+        <select id="game-platform" name="platform">
+            <option value="">Select a platform</option>
+            <option value="PC">PC</option>
+            <option value="PlayStation">PlayStation</option>
+            <option value="Xbox">Xbox</option>
+            <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="Other">Other</option>
+        
+        </select>
+
+        <label for="game-status">Play Status:</label>
+        
+        <select id="game-status" name="status">
+        
+            <option value="Waitlist">Waitlist</option>
+            <option value="Currently Playing">Currently Playing</option>
+        
+            <option value="Finished">Finished</option>
+        
+        </select>
+
+        <button type="submit">Add Game</button>
+    </form>
+</section>
+
+<section id="my-shelf">
+    <h2>My Shelf</h2>
+    <div id="game-list"></div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
