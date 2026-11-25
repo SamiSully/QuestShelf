@@ -7,7 +7,7 @@
 
 
 body {
-    background-color: #040b32;
+    background-color: #9799a2;
     color: #e8edf2;
 
     font-family: 'Cinzel', Georgia, serif;
@@ -31,7 +31,7 @@ body {
 body > p {
     grid-column: 1 / -1;
     text-align: center;
-    color: #081b2a;
+    color: #095f05;
     letter-spacing: 2px;
     margin: 0 0 20px;
 }
