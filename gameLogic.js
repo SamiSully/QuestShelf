@@ -15,3 +15,6 @@ function sortGames(games, sortOption) {
         });}
     return sortedGames;
 }
+if (typeof module !== "undefined") {
+    module.exports = { filterGames, sortGames };
+}
