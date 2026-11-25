@@ -63,9 +63,27 @@
 
 <section id="my-shelf">
     <h2>My Shelf</h2>
+    <div id="shelf-controls">
+
+        <label for="filter-status">Filter by Status:</label>
+        <select id="filter-status">
+        
+            <option value="All">All Games</option>
+            <option value="Waitlist">Waitlist</option>
+            <option value="Currently Playing">Currently Playing</option>
+            <option value="Finished">Finished</option>
+        
+        </select>
+
+        <label for="sort-games">Sort Games:</label>
+        <select id="sort-games">
+            <option value="default">Default</option>
+            <option value="az">Alphabetical (A-Z)</option>
+        </select>
+    </div>
+
     <div id="game-list"></div>
 </section>
-
 <script src="script.js"></script>
 
 </body>
