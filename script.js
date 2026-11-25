@@ -94,9 +94,20 @@ statusSelect.addEventListener("change", function() {
     
     displayGames();
 });
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove Game";
+        removeButton.className = "remove-button";
+
+        removeButton.addEventListener("click", function() {
+    if (confirm("Remove " + game.title + " from your Shelf?")) {
+        removeGame(games, index, localStorage);
+        displayGames();}
+
+    });
         gameCard.appendChild(gameTitle);
         gameCard.appendChild(gameDetails);
         gameCard.appendChild(statusSelect);
+        gameCard.appendChild(removeButton);
         gameList.appendChild(gameCard);
     });
 }
