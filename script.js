@@ -43,13 +43,23 @@ if (title === "") {
     const games = JSON.parse(localStorage.getItem("questshelfGames")) || [];
 
     gameList.innerHTML = "";
+    const filterStatus = document.getElementById("filter-status").value;
+    const sortOption = document.getElementById("sort-games").value;
 
+    const filteredGames = filterGames(games, filterStatus);
+    const displayedGames = sortGames(filteredGames, sortOption);
     if (games.length === 0) {
         gameList.textContent = "Your Shelf is empty. Add your first game!";
         return;
     }
-  games.forEach(function(game,  index ) {
-  const gameCard = document.createElement("div");
+
+    if (displayedGames.length === 0) {
+        gameList.textContent = "No games match your selected filter.";
+        return;
+    }
+  displayedGames.forEach(function(game) {
+    const index = games.indexOf(game);
+    const gameCard = document.createElement("div");
 
         const gameTitle = document.createElement("h3");
         gameTitle.textContent = game.title;
@@ -80,6 +90,8 @@ statusSelect.addEventListener("change", function() {
     games[index].status = statusSelect.value;
     localStorage.setItem("questshelfGames", JSON.stringify(games));
 
+   
+    
     displayGames();
 });
         gameCard.appendChild(gameTitle);
@@ -88,5 +100,8 @@ statusSelect.addEventListener("change", function() {
         gameList.appendChild(gameCard);
     });
 }
+document.getElementById("filter-status").addEventListener("change", displayGames);
+document.getElementById("sort-games").addEventListener("change", displayGames);
+
 
 displayGames();
