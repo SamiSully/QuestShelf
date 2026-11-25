@@ -1,27 +1,189 @@
-.logo {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
-#add-game {
-    max-width: 450px;
-    margin-top: 30px;
+
+body {
+    background-color: #9799a2;
+    color: #e8edf2;
+
+    font-family: 'Cinzel', Georgia, serif;
+    
+    margin: 0;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 25px;
+}
+
+
+.logo {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+body > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #095f05;
+    letter-spacing: 2px;
+    margin: 0 0 20px;
+}
+
+h2 {
+    color: #0d7610;
+    margin-top: 0;
+    border-bottom: 1px solid #227f62;
+    padding-bottom: 15px;
+}
+
+#add-game,
+#my-shelf {
+    background-color: #04033d6f;
+    border: 1px solid #17c247;
+    border-radius: 12px;
+    padding: 25px;
+    align-self: start;
 }
 
 #game-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
-#game-form input,
-#game-form select,
-#game-form button {
- 
-    padding: 10px;
-    font-size: 16px;
 
+input,
+select,
+button {
+    padding: 11px;
+    font-size: 14px;
+    border-radius: 6px;
 }
-#game-form button {
+
+input,
+select {
+    background-color: #0d490d66;
+    color: #e8edf2;
+    border: 2px solid #848d94;
+}
+
+button {
     cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+#game-form button {
+    background-color: #0813f129;
+    color: #dadfe3;
+    margin-top: 10px;
+}
+
+#game-form button:hover {
+    background-color: #91efbd;
+}
+
+#shelf-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+}
+
+#game-list > div {
+    background-color: #27293d;
+    border: 3px solid #3412ca;
+    border-left: 4px solid #1c5303;
+    border-bottom: 4px solid #1c5303;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#game-list h3 {
+    color: #25783f;
+    margin-top: 0;
+}
+
+#game-list p {
+    color: #dee1e3;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+#game-list select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.remove-button {
+    width: 100%;
+    background-color: #470f16;
+    color: white;
+}
+
+.remove-button:hover {
+    background-color: #42030a;
+}
+
+
+
+
+
+
+@media (max-width: 850px) {
+    body {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
+
+
+
+
+
+h2, h3 {
+    font-family: 'Cinzel Decorative', Georgia, serif;
+}
+
+input, select, button {
+    font-family: 'Cinzel', Georgia, serif;
+}
+.tagline img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.tagline {
+    font-size: 22px;
+}
+body {
+    background-image: url("QS\ shelf\ background\ image.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-left: 18%;
+    padding-right: 18%;
+}
+
+@media (max-width: 850px) {
+    body {
+        background-image: none;
+        padding: 15px;
+    }
 }

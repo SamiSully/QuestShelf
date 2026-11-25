@@ -16,5 +16,26 @@ function sortGames(games, sortOption) {
     return sortedGames;
 }
 if (typeof module !== "undefined") {
-    module.exports = { filterGames, sortGames };
+function removeGame(games, index, storage) {
+    if (!Number.isInteger(index) || index < 0 || index >= games.length) {
+        return games;
+    }
+
+    const updatedGames = [...games];
+    updatedGames.splice(index, 1);
+
+
+
+    
+    storage.setItem("questshelfGames", JSON.stringify(updatedGames));
+
+
+
+    return updatedGames;
 }
+
+
+
+if (typeof module !== "undefined") {
+    module.exports = { filterGames, sortGames, removeGame };
+}}
