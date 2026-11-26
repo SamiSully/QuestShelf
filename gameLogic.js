@@ -15,7 +15,7 @@ function sortGames(games, sortOption) {
         });}
     return sortedGames;
 }
-if (typeof module !== "undefined") {
+
 function removeGame(games, index, storage) {
     if (!Number.isInteger(index) || index < 0 || index >= games.length) {
         return games;
@@ -38,4 +38,4 @@ function removeGame(games, index, storage) {
 
 if (typeof module !== "undefined") {
     module.exports = { filterGames, sortGames, removeGame };
-}}
+}
